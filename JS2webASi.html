@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Practice</title>
+</head>
+<body>  
+    <script>
+        
+    var buttons = document.getElementsByClassName("task-button");
+
+    
+    for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", function () {
+        
+        if (i === 0) {
+            task1();
+        } else if (i === 1) {
+            task2();
+        } else if (i === 2) {
+            task3();
+        }
+    });
+}
+
+    </script>
+
+
+    <button onclick="task1()">Task 1</button>
+    <p class="task-button" id="task1"></p>
+
+    <button onclick="task2()">Task 2</button>
+    <p class="task-button" id="task2"></p>
+
+    <button onclick="task3()">Task 3</button>
+    <p class="task-button" id="task3"></p>
+
+    <button onclick="task4()">Task 4</button>
+    <p id="task4"></p>
+
+    <button onclick="task5()">Task 5</button>
+    <p id="task5"></p>
+
+    <button onclick="task6()">Task 6</button>
+    <p id="task6"></p>
+
+    <button onclick="task7()">Task 7</button>
+    <p id="task7"></p>
+
+    <button onclick="task8()">Task 8</button>
+    <p id="task8"></p>
+
+    <button onclick="task9()">Task 9</button>
+    <script>
+
+        function task1() {
+            var randomNum = Math.floor(Math.random() * 10) + 1;
+            var resultElement = document.getElementsByClassName("task-button")[0];
+            resultElement.innerText = "Random Number between 1 and 10: " + randomNum;
+        }
+
+        function task2() {
+            var randomNum = Math.floor(Math.random() * 711) + 89;
+            document.getElementsByClassName("task-button")[1].innerText = "Random Number between 89 and 799: " + randomNum;
+        }
+
+        function task3() {
+            var min = Math.floor(Math.random() * 60);
+            var quarter;
+            if (min < 15) {
+                quarter = "first";
+            } else if (min < 30) {
+                quarter = "second";
+            } else if (min < 45) {
+                quarter = "third";
+            } else {
+                quarter = "fourth";
+            }
+            document.getElementsByClassName("task-button")[2].innerText = "Minute: " + min + ", Quarter of the hour: " + quarter;
+        }
+
+        function task4() {
+            var test_var = 1;
+            var result = test_var === 0 ? "True" : "False";
+            document.querySelector('#task4').innerText = result;
+        }
+
+        function task5() {
+            var test2_var = -3;
+            if (test2_var <= 0) {
+                result = "True";
+            } else {
+                result = "False";
+            }
+            document.querySelector('#task5').innerText = result;
+        }
+
+        function task6() {
+            var test3_var = 'test';
+            var result = test3_var === 'test' ? "True" : "False";
+            document.querySelector('#task6').innerText = result;
+        }
+
+        function task7() {
+            var test4_var = 2;
+            var result = (test4_var > 0 && test4_var < 5) ? "True" : "False";
+            document.querySelector('#task7').innerText = result;
+        }
+
+        function task8() {
+            var test5_var = 2;
+            var test6_var = 3;
+            if (test5_var <= 1 && test6_var >= 3) {
+                result = "Sum: " + (test5_var + test6_var);
+            } else {
+                result = "Difference: " + (test5_var - test6_var);
+            }
+            document.querySelector('#task8').innerText = result;
+        }
+        var i = 0;
+        var score = 0;
+        var randomGuess2 = Math.floor(Math.random() * 10) + 1;
+        function task9() {
+            var userNumber = prompt("Enter a number between 1 and 10:");
+            if (i == 3){
+                    alert("You have no attempts left." + " Sorry you lost. Number was: " + randomGuess2);
+                    alert("Game is starting again" + " Your score is: " + score);
+                    randomGuess2 = Math.floor(Math.random() * 10) + 1;
+                    i = 0;
+                }
+            else {
+            if (userNumber == randomGuess2) {
+                alert("Congratulations! You guessed the correct number" + userNumber);
+                score++;
+                alert("Game is starting again" + " Your score is: " + score);
+                randomGuess2 = Math.floor(Math.random() * 10) + 1;
+                i = 0;
+            }
+            else if(userNumber > randomGuess2){
+                alert("it is lower" + " attemps left: " + (2-i));
+                 i++;
+                 task9()
+
+            }
+            else if(userNumber < randomGuess2){
+                alert("it is higher" + " attemps left: " + (2-i));
+                 i++;
+                 task9()
+            }
+        }
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Practice</title>
+</head>
+<body>
+
+    <div id="yourId"></div>
+
+    <script>
+        // 5 task 
+        console.log(Math.round(3.4) * 8);
+        console.log(Math.random());
+        console.log(Math.floor(4.7));
+        console.log(Math.ceil(4.1));
+        console.log(Math.min(45, 89));
+        console.log(Math.max(809, 120));
+        alert('5' * '3s');
+        alert('6' + '9');
+        alert('2' + (5 + 9));
+        alert(2 + 3 + '1');
+        document.write('3' * '2');
+        document.write('8' - '2');
+        document.write('43' / '4');
+        document.write('7' % '2');
+        document.write('5s' * '4');     
+    </script>
+
+    <script>
+    // -151 will be result
+        document.getElementById("yourId").innerHTML = (-'62') + (-'89');
+    </script>
+
+
+    <script>
+        // same output as next script 39
+        document.getElementById("yourId").innerHTML = '7' * 3 + '3' * 6;
+    </script>
+
+    <script>
+        // same ouput okay!
+        document.getElementById("yourId").innerHTML = '7' * '3' + '3' * '6';
+    </script>
+
+    <script>
+        alert('abbr' * 3);
+    </script>
+
+    <script>
+        // Task 19
+        alert(NaN + 3);
+    </script>
+
+    <script>
+        alert(8 / 0);
+    </script>
+
+    <script>
+        alert(-9 / 0);
+    </script>
+
+</body>
+</html>
