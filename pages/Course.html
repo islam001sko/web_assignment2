@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Armwrestling Category</title>
@@ -12,18 +11,16 @@
     <style>
         .bg-gradient-header-opacity {
             background-color: rgba(0, 0, 0, 0.85) !important;
-            /* Adjust the opacity value as needed */
+            
         }
 
         .bg-gradient-footer-opacity {
             background-color: rgba(0, 0, 0, 0.9) !important;
-            /* Adjust the opacity value as needed */
+            
         }
     </style>
 </head>
-
-<body style="font-family: 'Oswald', sans-serif !important; background-image: url(back2.jpg); ">
-
+<body style="font-family: 'Oswald', sans-serif !important; background-image: url(../assets/images/back2.jpg); ">
     <div class=" container w-75">
         <div class="row">
             <div class="col-md-3">
@@ -67,6 +64,68 @@
         </div>
     </div>
 
+    <!-- Levels and Progress Bar -->
+    <section class="container p-5">
+        <h2 class="text-center">Your Progress</h2>
+        <!-- Progress bar component -->
+        <div class="progress">
+            <div class="progress-bar bg-success" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+        </div>
+    </section>
+
+    <!-- Exercise Cards -->
+    <section class="container p-5">
+        <div class="row">
+            <!-- Exercise Card 1 -->
+            <div class="col-md-3">
+                <div class="card transparent-card">
+                    <img src="../assets/images/sitUp.jpg" class="card-img-top" alt="Exercise 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Sit ups</h5>
+                        <p class="card-text">Do it for your abs</p>
+                        <a href="#" class="btn btn-primary">Do 10 sit ups</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exercise Card 2 -->
+            <div class="col-md-3">
+                <div class="card transparent-card">
+                    <img src="../assets/images/pushUp.jpg" class="card-img-top" alt="Exercise 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Push ups</h5>
+                        <p class="card-text">Do it for your upper body</p>
+                        <a href="#" class="btn btn-primary">Do 10 push ups</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exercise Card 3 -->
+            <div class="col-md-3">
+                <div class="card transparent-card">
+                    <img src="../assets/images/pullUp.jpg" class="card-img-top" alt="Exercise 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Pull ups</h5>
+                        <p class="card-text">Do it for your back strength</p>
+                        <a href="#" class="btn btn-primary">Do 5 pull ups</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exercise Card 4 -->
+            <div class="col-md-3">
+                <div class="card transparent-card">
+                    <img src="../assets/images/squat.jpg" class="card-img-top" alt="Exercise 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Squats</h5>
+                        <p class="card-text">Do it for your legs</p>
+                        <a href="#" class="btn btn-primary">Do 20 squats</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <main class="container mt-4 bg-white">
         <section class="border p-3 bg-gradient-section">
             <h2>Featured Video</h2>
@@ -81,11 +140,6 @@
                 <li><a href="#">User Reviews</a></li>
             </ul>
         </aside>
-
-        <p class="mt-4">
-            <span class="highlight-text">Important Note:</span>
-            <mark class="attention">Pay attention to this message.</mark>
-        </p>
 
         <div class="content-section mt-4 bg-white">
             <h2>Armwrestling Techniques</h2>
@@ -140,5 +194,4 @@
     <script src="https://kit.fontawesome.com/b68baa7942.js" crossorigin="anonymous"></script>
 
 </body>
-
 </html>
