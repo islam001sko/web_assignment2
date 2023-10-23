@@ -1,15 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
     <title>The Best Armwrestlers in the World</title>
     <style>
         body {
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Oswald', sans-serif !important;
         }
 
         .header {
@@ -41,7 +42,6 @@
 
         .nav a {
             text-decoration: none;
-            color: white;
             margin-right: 20px;
         }
 
@@ -91,7 +91,8 @@
             width: 100%;
         }
 
-        .prev, .next {
+        .prev,
+        .next {
             cursor: pointer;
             position: absolute;
             top: 50%;
@@ -119,30 +120,31 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="container">
         <div class="row">
             <div class="logo">
-                <img src="navIcon.png" alt="Logo" width="150" height="auto">
+                <img src="../assets/images/navIcon.png" alt="Logo" width="150" height="auto">
             </div>
             <div class="nav">
-                <a href="welcome.html">Welcome</a>
-                <a href="store.html">Store</a>
-                <a href="Course.html">Courses</a>
-                <a href="Login.html">Sign up</a>
-                <a href="Top.html">Top</a>
+                <a class="text-dark pe-3" href="welcome.html">Welcome</a>
+                <a class="text-dark pe-3" href="store.html">Store</a>
+                <a class="text-dark pe-3" href="Course.html">Courses</a>
+                <a class="text-dark pe-3" href="Login.html">Sign up</a>
+                <a class="text-dark pe-3" href="Top.html">Top</a>
 
-                
+
             </div>
             <div class="nav">
                 <a href="https://www.instagram.com/?hl=en">Instagram</a>
                 <a href="https://twitter.com/">Twitter</a>
                 <a href="https://www.skype.com/en/">Skype</a>
                 <a href="https://www.facebook.com/login.php">Facebook</a>
-                
+
             </div>
-            
+
         </div>
     </div>
 
@@ -152,13 +154,13 @@
 
     <div class="slider-container">
         <div class="mySlides">
-            <img src="Denis.jpg" alt="Image 1">
+            <img src="../assets/images/Denis.jpg" alt="Image 1">
         </div>
         <div class="mySlides">
-            <img src="Devon.jpg" alt="Image 2">
+            <img src="../assets/images/Devon.jpg" alt="Image 2">
         </div>
         <div class="mySlides">
-            <img src="Levan.jpg" alt="Image 3">
+            <img src="../assets/images/Levan.jpg" alt="Image 3">
         </div>
 
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -188,5 +190,5 @@
         }
     </script>
 </body>
-</html>
 
+</html>
