@@ -1,38 +1,87 @@
-const button1 = document.getElementById('colorChangeButton1');
-const button2 = document.getElementById('colorChangeButton2');
+// Welcome section of Welcome page
+const btns = document.querySelectorAll(".nav-btn");
+const slides = document.querySelectorAll(".img-slide");
+const contents = document.querySelectorAll(".content");
 
-button1.addEventListener('mouseover', function () {
-    button1.style.backgroundColor = '#f1c40f';
-    button1.style.transform = 'scale(1.1)';
+var sliderNav = function (manual) {
+    btns.forEach((btn) => {
+        btn.classList.remove("active");
+    });
+
+    slides.forEach((slide) => {
+        slide.classList.remove("active");
+    });
+
+    contents.forEach((content) => {
+        content.classList.remove("active");
+    });
+
+    btns[manual].classList.add("active");
+    slides[manual].classList.add("active");
+    contents[manual].classList.add("active");
+}
+
+btns.forEach((btn, i) => {
+    btn.addEventListener("click", () => {
+        sliderNav(i)
+    });
 });
 
-button1.addEventListener('mouseout', function () {
-    button1.style.backgroundColor = '#3498db';
-    button1.style.transform = 'scale(1)';
-});
+//Welcome page sign up section
+function validateForm() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    var email = document.getElementById("email").value;
+    var isValid = true;
 
-button1.addEventListener('click', function () {
-    const userInput = prompt("Please enter your city:");
-
-    if (userInput !== null) {
-        alert("You'r city entered to make branch: " + userInput);
+    if (username === "") {
+        displayError("username-error", "Username is required.");
+        isValid = false;
+    } else {
+        clearError("username-error");
     }
-});
 
-button2.addEventListener('mouseover', function () {
-    button2.style.backgroundColor = '#f1c40f';
-    button2.style.transform = 'scale(1.1)';
-});
-
-button2.addEventListener('mouseout', function () {
-    button2.style.backgroundColor = '#3498db';
-    button2.style.transform = 'scale(1)';
-});
-
-button2.addEventListener('click', function () {
-    const userInput = prompt("Please enter your city:");
-
-    if (userInput !== null) {
-        alert("You'r city entered to make branch: " + userInput);
+    if (!isValidPassword(password)) {
+        displayError("password-error", "Password must be at least 8 characters with at least one letter and one number.");
+        isValid = false;
+    } else {
+        clearError("password-error");
     }
+
+    if (!isValidEmail(email)) {
+        displayError("email-error", "Please enter a valid email address.");
+        isValid = false;
+    } else {
+        clearError("email-error");
+    }
+
+    return isValid;
+}
+
+function isValidPassword(password) {
+    var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/;
+    return passwordRegex.test(password);
+}
+
+function isValidEmail(email) {
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function displayError(elementId, message) {
+    var errorElement = document.getElementById(elementId);
+    errorElement.textContent = message;
+}
+
+function clearError(elementId) {
+    var errorElement = document.getElementById(elementId);
+    errorElement.textContent = "";
+}
+
+const firstButton = document.getElementById("firstButton");
+
+firstButton.addEventListener("click", () => {
+    console.log("1")
+    sliderNav(1)
 });
+
