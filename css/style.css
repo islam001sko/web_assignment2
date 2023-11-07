@@ -264,6 +264,7 @@ section {
 .qt,
 .qt-plus,
 .qt-minus {
+    display: block;
     float: left;
 }
 
