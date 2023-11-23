@@ -147,3 +147,61 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+function sortNewsAscending() {
+    const mainNews = document.getElementById('main-news');
+    const newsItems = Array.from(mainNews.querySelectorAll('.col-md-4'));
+    const mnList = mainNews.querySelector('.mn-list');
+
+    const sortedItems = newsItems.sort(function (a, b) {
+        const dateA = new Date(a.getAttribute('data-date'));
+        const dateB = new Date(b.getAttribute('data-date'));
+        return dateA - dateB;
+    });
+
+    mainNews.innerHTML = '';
+    mainNews.appendChild(document.createElement('h3')).textContent = 'News Of Day';
+    mainNews.appendChild(document.createElement('button')).textContent = 'Sort Ascending';
+    mainNews.lastChild.id = 'sortAscBtn';
+    mainNews.appendChild(document.createElement('button')).textContent = 'Sort Descending';
+    mainNews.lastChild.id = 'sortDescBtn';
+
+    sortedItems.forEach(function (item) {
+        mainNews.appendChild(item);
+    });
+
+    mainNews.appendChild(mnList);
+    document.getElementById('sortAscBtn').addEventListener('click', sortNewsAscending);
+    document.getElementById('sortDescBtn').addEventListener('click', sortNewsDescending);
+}
+
+function sortNewsDescending() {
+    const mainNews = document.getElementById('main-news');
+    const newsItems = Array.from(mainNews.querySelectorAll('.col-md-4'));
+    const mnList = mainNews.querySelector('.mn-list');
+
+    const sortedItems = newsItems.sort(function (a, b) {
+        const dateA = new Date(a.getAttribute('data-date'));
+        const dateB = new Date(b.getAttribute('data-date'));
+        return dateB - dateA;
+    });
+
+    mainNews.innerHTML = '';
+    mainNews.appendChild(document.createElement('h3')).textContent = 'News Of Day';
+    mainNews.appendChild(document.createElement('button')).textContent = 'Sort Ascending';
+    mainNews.lastChild.id = 'sortAscBtn';
+    mainNews.appendChild(document.createElement('button')).textContent = 'Sort Descending';
+    mainNews.lastChild.id = 'sortDescBtn';
+
+    sortedItems.forEach(function (item) {
+        mainNews.appendChild(item);
+    });
+
+    mainNews.appendChild(mnList);
+    document.getElementById('sortAscBtn').addEventListener('click', sortNewsAscending);
+    document.getElementById('sortDescBtn').addEventListener('click', sortNewsDescending);
+}
+
+
+document.getElementById('sortAscBtn').addEventListener('click', sortNewsAscending);
+document.getElementById('sortDescBtn').addEventListener('click', sortNewsDescending);
